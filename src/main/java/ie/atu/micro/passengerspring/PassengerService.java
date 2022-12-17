@@ -16,4 +16,7 @@ public class PassengerService {
     {
         return passengerRepo.findAll();
     }
+    public void savePassenger(Passenger passenger){
+        passengerRepo.save(passenger);
+    }
 }
