@@ -1,5 +1,5 @@
 #FROM initializes a new build stage in our case we're
-#Using java version 17 alpine(slimmed down)
+#Using java version 17 alpine(slimmed down)q
 FROM openjdk:17-jdk-alpine
 
 RUN mkdir "target"
