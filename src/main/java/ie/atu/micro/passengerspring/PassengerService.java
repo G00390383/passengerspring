@@ -10,15 +10,21 @@ import java.util.List;
 public class PassengerService {
 
     private final PassengerRepo passengerRepo;
+
     public List <Passenger> getPassenger()
     {
         return passengerRepo.findAll();
     }
+
     public void savePassenger(Passenger passenger){
         passengerRepo.save(passenger);
     }
 
     public Passenger findPassengerByName(String name){
         return passengerRepo.findPassengerByName(name);
+    }
+
+    public void deletePassenger(long count){
+        passengerRepo.deleteById(count);
     }
 }
