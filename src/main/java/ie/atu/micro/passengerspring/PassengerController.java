@@ -34,20 +34,23 @@ public class PassengerController {
 
     @PostMapping("")
     public void savePassenger(
-            @RequestBody Passenger passenger)
-    {
+            @RequestBody Passenger passenger) {
         newService.savePassenger(passenger);
     }
 
     //find passenger by name
     @GetMapping("/name/{name}")
-    public Passenger getPassengerName(@PathVariable("name") String name)
-    {
+    public Passenger getPassengerName(@PathVariable("name") String name) {
         return newService.findPassengerByName(name);
     }
 
     @DeleteMapping("/delete/{count}")
     public void deletePassenger(@PathVariable("count") long count){
         newService.deletePassenger(count);
+    }
+
+    @GetMapping("/age")
+    public List<Passenger> getPassengerByAge(@RequestParam(name = "age_start") int age1, @RequestParam(name = "age_end") int age2){
+        return newService.findPassengerByAgeRange(age1, age2);
     }
 }
