@@ -3,7 +3,7 @@ RUN mkdir -p /workspace
 WORKDIR /workspace
 COPY pom.xml /workspace
 COPY src /workspace/src
-RUN mvn -B package --file pom.xml -DskipTests
+RUN mvn -B package --file pom.xml
 #FROM initializes a new build stage in our case we're
 #Using java version 17 alpine(slimmed down)
 FROM openjdk:17-jdk-alpine
