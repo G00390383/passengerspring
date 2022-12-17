@@ -2,8 +2,6 @@ package ie.atu.micro.passengerspring;
 
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
 
@@ -18,5 +16,9 @@ public class PassengerService {
     }
     public void savePassenger(Passenger passenger){
         passengerRepo.save(passenger);
+    }
+
+    public Passenger findPassengerByName(String name){
+        return passengerRepo.findPassengerByName(name);
     }
 }
