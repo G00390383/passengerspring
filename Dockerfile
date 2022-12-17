@@ -1,12 +1,8 @@
-FROM maven:3.6.3-openjdk-17-slim AS build
-RUN mkdir -p /workspace
-WORKDIR /workspace
-COPY pom.xml /workspace
-COPY src /workspace/src
-RUN mvn -B package --file pom.xml
 #FROM initializes a new build stage in our case we're
 #Using java version 17 alpine(slimmed down)
 FROM openjdk:17-jdk-alpine
+
+RUN mkdir "target"
 
 # ADD a volume pointing to /tmp to store persistent data
 VOLUME /tmp
