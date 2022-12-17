@@ -28,11 +28,11 @@ public class PassengerController {
 
     @GetMapping("")
     public List getPassengers(){
-        return newService.getPassengers();
+        return newService.getPassenger();
     }
     @GetMapping("/{passengerID}")
     public Passenger findPassenger(@PathVariable String passengerID){
-        return (Passenger) newService.getPassenger(passengerID);
+        return (Passenger) newService.getPassenger();
     }
 
 }

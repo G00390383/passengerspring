@@ -1,13 +1,18 @@
 package ie.atu.micro.passengerspring;
 
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+
+
 @Getter
 @Setter
 @NoArgsConstructor
+@Entity
+@Table
 public class Passenger {
     String title;
     String name;
@@ -15,6 +20,9 @@ public class Passenger {
     long phone;
     int age;
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long count;
     public Passenger(String title, String name, long id, long phone, int age) {
         setTitle(title);
         setName(name);
