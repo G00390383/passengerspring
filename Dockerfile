@@ -2,8 +2,6 @@
 #Using java version 17 alpine(slimmed down)q
 FROM openjdk:17-jdk-alpine
 
-RUN mkdir "target"
-
 # ADD a volume pointing to /tmp to store persistent data
 VOLUME /tmp
 
@@ -12,7 +10,7 @@ VOLUME /tmp
 ARG JAR_FILE=target/passengerspring-0.0.1-SNAPSHOT.jar
 
 # ADD copys the application's jar to the container from the args directory
-ADD ${JAR_FILE} passengerspring-0.0.1-SNAPSHOT.jar
+ADD ${JAR_FILE} target/passengerspring-0.0.1-SNAPSHOT.jar
 
 # The ENTRYPOINT will set executable that will run when container is initiated
 ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/passengerspring-0.0.1-SNAPSHOT.jar"]
