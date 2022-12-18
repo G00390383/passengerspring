@@ -100,6 +100,28 @@
 					</execution>
 				</executions>
 			</plugin>
+			<plugin>
+				<groupId>com.google.cloud.tools</groupId>
+				<artifactId>jib-maven-plugin</artifactId>
+				<version>2.5.0</version>
+				<configuration>
+					<to>
+						<image>registry.hub.docker.com/darraghwalker/passengerspring</image>
+						<auth>
+							<username>darraghwalker</username>
+							<password>dckr_pat_rWjT89a6qPjQ39QAa02TXRtnjCc</password>
+						</auth>
+					</to>
+				</configuration>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>build</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
 		</plugins>
 	</build>
 
