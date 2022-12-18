@@ -28,7 +28,5 @@ jobs:
         with:
           java-version: '17'
           distribution: 'adopt'
-          push: true
-          tags: shannon3335/passenger2_postgres:latest
       - name: Build with Maven
         run: mvn test
