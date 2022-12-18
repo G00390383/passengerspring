@@ -10,7 +10,7 @@ VOLUME /tmp
 ARG JAR_FILE=target/passengerspring-0.0.1-SNAPSHOT.jar
 
 # ADD copys the application's jar to the container from the args directory
-ADD ${JAR_FILE} passengerspring-0.0.1-SNAPSHOT.jar
+COPY ${JAR_FILE} /passengerspring-0.0.1-SNAPSHOT.jar
 
 # The ENTRYPOINT will set executable that will run when container is initiated
 ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/passengerspring-0.0.1-SNAPSHOT.jar"]
