@@ -1,8 +1,5 @@
 package ie.atu.micro.passengerspring;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -14,11 +11,7 @@ public class PassengerController {
 
     private PassengerService newService;
 
-    @Autowired
-    public static void main(String[] args) {
-        System.out.println("Hello World!!");
-        SpringApplication.run(PassengerspringApplication.class, args);
-    }
+
     public PassengerController(PassengerService newService){
         this.newService = newService;
     }
